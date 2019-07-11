@@ -1,0 +1,17 @@
+{
+    "name": "simonasjurksa/mockup",
+    "description": "API mockups and management.",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "seemas",
+            "email": "simonas.jurksa@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/http-foundation": "^4.3",
+        "symfony/http-client": "^4.3"
+    }
+}

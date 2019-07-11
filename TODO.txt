@@ -1,0 +1,4 @@
+ROADMAP:
+1. settings file to override some parts
+2. soap support (currently not needed)
+3. bucket support to separate different mockups
