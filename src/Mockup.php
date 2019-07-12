@@ -47,12 +47,23 @@ class Mockup {
   ];
 
   /**
+   * @var \Helper
+   */
+  private $helper;
+
+  /**
+   * @var string
+   */
+  private $query;
+
+  /**
    * Mockup constructor.
    */
   public function __construct() {
     $this->helper = new Helper();
     $this->request = Request::createFromGlobals();
     list($this->apiUrl, $this->apiUri) = $this->getApiUrlParams();
+    $this->query = $_SERVER['QUERY_STRING'];
     $this->logRequest();
   }
 
@@ -114,7 +125,7 @@ class Mockup {
     //    $this->debug();
     $response = $client->request(
       $this->request->getMethod(),
-      $this->apiUrl . $this->apiUri,
+      $this->apiUrl . $this->apiUri . '?'. $this->query,
       [
         'headers' => $this->getFilteredHeaders(),
         'body' => $this->request->getContent(),
@@ -157,6 +168,11 @@ class Mockup {
     $fileContents['request']['body'] = $this->request->getContent();
     $fileContents['request']['url'] = $this->apiUrl;
     $fileContents['request']['uri'] = $this->apiUri;
+    $fileContents['request']['query'] = $this->query;
+    // Debug info:
+    //    $fileContents['request']['_SERVER'] = $_SERVER;
+    //    $fileContents['request']['_GET'] = $_GET;
+    //    $fileContents['request']['_REQUEST'] = $_REQUEST;
     if ($response) {
       $fileContents['response']['body'] = (string) $response->getBody();
       $fileContents['response']['statusCode'] = $response->getStatusCode();
@@ -219,7 +235,7 @@ class Mockup {
    * @throws \Exception
    */
   private function getFileName() {
-    return $this->getResponseDirectory() . '/' . strtoupper($this->request->getMethod()) . preg_replace('/[^A-Za-z\-0-9]/', '_', $this->apiUri) . '.json';
+    return $this->getResponseDirectory() . '/' . strtoupper($this->request->getMethod()) . preg_replace('/[^A-Za-z\-0-9]/', '_', $this->apiUri . $this->query) . '.json';
   }
 
   /**
