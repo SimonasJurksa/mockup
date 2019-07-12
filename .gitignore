@@ -1,3 +1,4 @@
 requests.log
 vendor
 response/*
+config/settings.php

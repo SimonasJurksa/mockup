@@ -7,7 +7,8 @@
 //error_reporting(E_ALL);
 
 require_once __DIR__ . '/vendor/autoload.php';
-require_once 'mockup.php';
+require_once 'src/Mockup.php';
+require_once 'src/Helper.php';
 
 $mockup = new Mockup();
 if (!$mockup->isMockup()) {

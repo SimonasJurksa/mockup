@@ -1,6 +1,7 @@
 <?php
 
 use GuzzleHttp\Client;
+use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -49,6 +50,7 @@ class Mockup {
    * Mockup constructor.
    */
   public function __construct() {
+    $this->helper = new Helper();
     $this->request = Request::createFromGlobals();
     list($this->apiUrl, $this->apiUri) = $this->getApiUrlParams();
     $this->logRequest();
@@ -142,16 +144,19 @@ class Mockup {
   }
 
   /**
+   * Lets create mock file even if response is not known.
+   * This is more for making offline requests available after got online.
+   *
    * @param \Psr\Http\Message\ResponseInterface|NULL $response
    *
    * @return array
    */
-  private function formFileContent(\Psr\Http\Message\ResponseInterface $response = NULL) {
+  private function formFileContent(ResponseInterface $response = NULL) {
     $fileContents = [];
-
-    $fileContents['request']['headers'] = $this->request->headers->all();
+    $fileContents['request']['headers'] = getallheaders();
     $fileContents['request']['body'] = $this->request->getContent();
-    $fileContents['request']['_SERVER'] = $_SERVER;
+    $fileContents['request']['url'] = $this->apiUrl;
+    $fileContents['request']['uri'] = $this->apiUri;
     if ($response) {
       $fileContents['response']['body'] = (string) $response->getBody();
       $fileContents['response']['statusCode'] = $response->getStatusCode();
@@ -162,30 +167,50 @@ class Mockup {
   }
 
   /**
+   * Checks if mockup file exists.
+   *
    * @return bool
    * @throws \Exception
    */
   public function isMockup() {
     if (is_dir($this->getResponseDirectory()) && file_exists($this->getFileName())) {
-
-      return TRUE;
+      if ($this->hasMockupPropperResponse($this->getFileName())) {
+        return TRUE;
+      }
     }
     return FALSE;
   }
 
   /**
+   * Checks if proper response is set in mockup file.
+   *
+   * @param string $fileName
+   *
+   * @return bool
+   */
+  private function hasMockupPropperResponse(string $fileName) {
+    $contents = json_decode(file_get_contents($fileName));
+
+    return isset($contents->response);
+  }
+
+  /**
+   * Provides a directory related to request uri.
+   *
    * @return bool
    * @throws \Exception
+   * @todo introduce buckets.
+   *
    */
   private function getResponseDirectory() {
-
-    $dirName = self::DIRECTORY_RESPONSE . parse_url($this->apiUrl, PHP_URL_HOST) . urldecode($this->apiUri);
+    $dirName = self::DIRECTORY_RESPONSE . $this->helper->getBucket() . '/' . parse_url($this->apiUrl, PHP_URL_HOST) . urldecode($this->apiUri);
     $dirName = preg_replace('/[^A-Za-z\-0-9\/]/', '_', $dirName);
 
     $dirName = str_replace('__', '_', $dirName);
     if (!is_dir($dirName)) {
       mkdir($dirName, 0777, TRUE);
     }
+
     return $dirName;
   }
 
@@ -225,6 +250,8 @@ class Mockup {
   }
 
   /**
+   * Function that fetches api url that is kept between "|" (%7C').
+   *
    * @return array
    */
   private function getApiUrlParams() {
@@ -239,9 +266,13 @@ class Mockup {
   }
 
   /**
+   * I found that some filters are overkilling and does not work well.
+   * So we filter them.
+   *
    * @param bool $custom_filter
    *
    * @return array
+   * @todo make headers filter configurable in settings file
    */
   private function getFilteredHeaders($custom_filter = FALSE) {
     if ($custom_filter !== FALSE) {
@@ -262,7 +293,7 @@ class Mockup {
   }
 
   /**
-   *
+   * Add it anywhere to get more output while debugging.
    */
   private function debug() {
     var_dump([
@@ -275,6 +306,9 @@ class Mockup {
         'timeout' => 5,
       ],
     ]);
+    // Dump mockup object.
+    // See __toString().
+    echo $this;
     die;
   }
 
