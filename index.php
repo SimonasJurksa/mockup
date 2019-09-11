@@ -11,6 +11,7 @@ require_once 'src/Mockup.php';
 require_once 'src/Helper.php';
 
 $mockup = new Mockup();
+
 if (!$mockup->isMockup()) {
   $mockup->saveMockup();
 }

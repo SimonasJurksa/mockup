@@ -125,7 +125,7 @@ class Mockup {
     //    $this->debug();
     $response = $client->request(
       $this->request->getMethod(),
-      $this->apiUrl . $this->apiUri . '?'. $this->query,
+      $this->apiUrl . $this->apiUri . '?' . $this->query,
       [
         'headers' => $this->getFilteredHeaders(),
         'body' => $this->request->getContent(),

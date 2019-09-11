@@ -2,3 +2,4 @@ requests.log
 vendor
 response/*
 config/settings.php
+config/bucket.json
