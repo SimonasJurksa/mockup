@@ -46,7 +46,7 @@ class Helper {
    * @return mixed
    */
   public function getBucket() {
-    return json_decode(file_get_contents('config/bucket.json'))->default;
+    return json_decode(file_get_contents('config/bucket.json'))->bucket;
   }
 
 }

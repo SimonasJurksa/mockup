@@ -252,14 +252,14 @@ class Mockup {
    * Logs for better tracking what was called when.
    */
   private function logRequest() {
-    $data = implode(' || ', [
+    $data = implode(PHP_EOL, [
         date('[Y-m-d H:i:s]'),
         $this->request->getPathInfo(),
         $this->request->getQueryString(),
         $this->request->getMethod(),
         $this->request->getContent(),
         $this->getFileName(),
-      ]) . PHP_EOL . PHP_EOL;
+      ]) . PHP_EOL . ' ---------- ' . PHP_EOL;
     $fp = fopen('requests.log', 'a');
     fwrite($fp, $data);
     fclose($fp);
