@@ -1,0 +1,10 @@
+mockup:
+    image: mockup/mockup:latest
+    container_name: mockup
+    environment:
+     - PMA_ARBITRARY=1
+#    restart: always
+    ports:
+     - 8080:80
+    volumes:
+     - /sessions

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4f24e6e3-8186-4ab8-9574-b24b786ddd83" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mockup/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mockup.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mockup.loc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile-alpine.template" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile-debian.template" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/config.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/docker-entrypoint.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/etc/etc/mockup/config.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/etc/etc/nginx.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/etc/etc/php-fpm.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/etc/etc/supervisor.d/nginx.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/etc/etc/supervisor.d/php.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/etc/mockup/config.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/etc/nginx.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/etc/php-fpm.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/etc/supervisor.d/nginx.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/etc/supervisor.d/php.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/php.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm-alpine/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/fpm-alpine/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/config.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/docker-entrypoint.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/etc/etc/mockup/config.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/etc/etc/nginx.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/etc/etc/php-fpm.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/etc/etc/supervisor.d/nginx.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/etc/etc/supervisor.d/php.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/etc/mockup/config.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/etc/nginx.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/etc/php-fpm.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/etc/supervisor.d/nginx.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/etc/supervisor.d/php.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/php.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpm/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/config.test.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/mockup_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/test-docker.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/test-mariadb.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/test.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/testing.cnf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/world.sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>phpmyadmin</find>
+      <find>PMA</find>
+      <find>MARIAD</find>
+      <find>LOCALHOST</find>
+      <find>PMA_ARBITRARY</find>
+      <find>password</find>
+      <find>test</find>
+      <find>alpine</find>
+      <find>client_body_temp</find>
+      <find>tar</find>
+      <find>bash</find>
+      <find>DOCKER_</find>
+      <find>docker build -t</find>
+      <find>mockup/mockup</find>
+      <find>COPY</find>
+      <find>tar.gz</find>
+      <find>mockup.tar.xz</find>
+      <find>languages.</find>
+      <find>php-mockup.ini</find>
+      <find>php.ini</find>
+      <find>php-fpm.conf</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>mockup</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JQLSearcherProjectManager">
+    <selected>-1</selected>
+    <searchers />
+  </component>
+  <component name="JiraServerManager">
+    <selected>-1</selected>
+    <servers />
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1WO99WASdrQg2YOwN2OYwa4rA2U" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4f24e6e3-8186-4ab8-9574-b24b786ddd83" name="Default Changelist" comment="" />
+      <created>1558088900532</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558088900532</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
