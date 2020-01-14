@@ -1,5 +1,10 @@
-requests.log
+config.secret.inc.php
 vendor
+dashboard/vendor
+.idea
+backup
+.github
 response/*
-config/settings.php
-config/bucket.json
+logs/*
+api/config/bucket.json
+api/config/settings.php
