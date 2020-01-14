@@ -308,6 +308,104 @@ class Mockup {
   }
 
   /**
+   * Provides a directory related to request uri.
+   *
+   * @return bool
+   * @throws \Exception
+   * @todo introduce buckets.
+   *
+   */
+  private function getResponseDirectory() {
+    $dirName = self::DIRECTORY_RESPONSE . $this->helper->getBucket() . '/' . parse_url($this->apiUrl, PHP_URL_HOST) . urldecode($this->apiUri);
+    $dirName = preg_replace('/[^A-Za-z\-0-9\/]/', '_', $dirName);
+
+    $dirName = str_replace('__', '_', $dirName);
+    if (!is_dir($dirName)) {
+      mkdir($dirName, 0777, TRUE);
+    }
+
+    return $dirName;
+  }
+
+  /**
+   * @return string
+   * @throws \Exception
+   */
+  private function getFileName() {
+    return $this->getResponseDirectory() . '/' . strtoupper($this->request->getMethod()) . preg_replace('/[^A-Za-z\-0-9]/', '_', $this->apiUri . $this->query) . '.json';
+  }
+
+  /**
+   * @param array $fileContents
+   *
+   * @throws \Exception
+   */
+  private function saveToFile(array $fileContents) {
+    file_put_contents($this->getFileName(), json_encode($fileContents));
+  }
+
+
+  /**
+   * Logs for better tracking what was called when.
+   */
+  private function logRequest() {
+    $data = implode(' || ', [
+        date('[Y-m-d H:i:s]'),
+        $this->request->getPathInfo(),
+        $this->request->getQueryString(),
+        $this->request->getMethod(),
+        $this->request->getContent(),
+        $this->getFileName(),
+      ]) . PHP_EOL . PHP_EOL;
+    $fp = fopen('requests.log', 'a');
+    fwrite($fp, $data);
+    fclose($fp);
+  }
+
+  /**
+   * Function that fetches api url that is kept between "|" (%7C').
+   *
+   * @return array
+   */
+  private function getApiUrlParams() {
+    if (strpos($this->request->getPathInfo(), '%7C') !== FALSE) {
+      $query = explode('%7C', $this->request->getPathInfo());
+    }
+    else {
+      die('{"error": "ApiBasePathNofFound", "basePath": "' . $this->request->getPathInfo() . '"}');
+    }
+
+    return [base64_decode($query[1]), $query[2]];
+  }
+
+  /**
+   * I found that some filters are overkilling and does not work well.
+   * So we filter them.
+   *
+   * @param bool $custom_filter
+   *
+   * @return array
+   * @todo make headers filter configurable in settings file
+   */
+  private function getFilteredHeaders($custom_filter = FALSE) {
+    if ($custom_filter !== FALSE) {
+      $filter = $custom_filter;
+    }
+    else {
+      $filter = $this->defaultHeaderFilter;
+    }
+    $allHeaders = getallheaders();
+    foreach (getallheaders() as $key => $value) {
+
+      if (in_array(strtolower($key), $filter)) {
+        unset($allHeaders[$key]);
+      }
+    }
+
+    return $allHeaders;
+  }
+
+  /**
    * Add it anywhere to get more output while debugging.
    */
   private function debug() {
